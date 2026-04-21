@@ -39,3 +39,16 @@ SELECT  b.building_name  , e.role
 from buildings b
 left join employees e on e.building=b.building_name
 GROUP BY b.building_name, e.role
+
+Questions 3==> Find the name and role of all employees who have not been assigned to a building
+
+SELECT name , role
+FROM employees
+where building Is  null
+
+Questions:: 4 => Find the names of the buildings that hold no employees 
+
+SELECT b.building_name 
+FROM buildings b
+left join employees e on e.building=b.building_name
+where name is null
