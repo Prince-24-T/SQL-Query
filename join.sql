@@ -109,3 +109,37 @@ Question:: 3 => List all movies that were released on even number years
 SELECT  m.title 
 from movies m
 where m.year%2=0;
+
+
+-- Table: employees
+-- role	name	building	years_employed
+-- Engineer	Becky A.	1e	4
+-- Engineer	Dan B.	1e	2
+-- Engineer	Sharon F.	1e	6
+-- Engineer	Dan M.	1e	4
+-- Engineer	Malcom S.	1e	1
+-- Artist	Tylar S.	2w	2
+-- Artist	Sherman D.	2w	8
+-- Artist	Jakob J.	2w	6
+-- Artist	Lillia A.	2w	7
+-- Artist	Brandon J.	2w	7
+
+
+
+Questions:: 1--> Find the longest time that an employee has been at the studio 
+
+SELECT Max(years_employed) as longestTime
+from employees;
+
+Questions :: 2 --> For each role, find the average number of years employed by employees in that role 
+
+SELECT avg(years_employed) as avgYear , role
+from Employees
+group by role
+
+
+ Questions:: 3--> Find the total number of employee years worked in each building
+
+ SELECT sum(years_employed) as totalYear , building
+from Employees
+group by building
