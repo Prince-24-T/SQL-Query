@@ -33,3 +33,26 @@ update movies
 set title ="Toy Story 3",
  director = "Lee Unkrich"
 where title ="Toy Story 8";
+
+
+
+-- Table: movies
+-- id	title	director	year	length_minutes
+-- 7	Cars	John Lasseter	2006	117
+-- 8	Ratatouille	Brad Bird	2007	115
+-- 9	WALL-E	Andrew Stanton	2008	104
+-- 10	Up	Pete Docter	2009	101
+-- 11	Toy Story 3	Lee Unkrich	2010	103
+-- 12	Cars 2	John Lasseter	2011	120
+-- 13	Brave	Brenda Chapman	2012	102
+-- 14	Monsters University	Dan Scanlon	2013	110
+
+Question::1===> This database is getting too big, lets remove all movies that were released before 2005
+
+delete from movies
+where year<2005
+
+Question::2==>Andrew Stanton has also left the studio, so please remove all movies directed by him.
+delete from movies
+where director="Andrew Stanton"
+
